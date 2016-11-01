@@ -1,0 +1,11 @@
+<?xml version="1.0" ?>
+<server class="org.jpos.q2.iso.QServer" name="mg.server">
+	<attr name="port" type="java.lang.Integer">4000</attr>
+	<channel class="com.yogapay.core.server.jpos.HEXChannel"
+		packager="com.yogapay.core.server.jpos.Packager" header="6000060000603000000000">
+		<property name="override-header" value="true" />
+		<property name="packager-config" value="classpath:packager/chinaums_pos.xml" />
+		<property name="timeout" value="30000" />
+	</channel>
+	<request-listener class="com.yogapay.core.server.RequestListener" />
+</server>
